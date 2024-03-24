@@ -12,7 +12,7 @@
 
         #calculator {
             width: 200px;
-            background-color: linear-gradient(#b7b7b7,#9c9c9c);
+            background-image: linear-gradient(#b7b7b7,#9c9c9c);
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0, 0, .8);
@@ -29,6 +29,7 @@
         }
 
         #display {
+            padding: 10px;
             font-size: 1.4em;
             text-align: right;
             background-image: linear-gradient(#c5c5c5,#e0e0e0);
@@ -76,7 +77,29 @@
 
     </div>
 
-    <script></script>
+    <script>
+        var n1 = "0";
+        var operacao = null;
+        var n1 = "";
+
+        function incluirDigito(digito){
+            if(n1 === "0") {
+                n1 = digito
+            }else {
+                n1 += digito;
+            }
+            mostrarNoDisplay(n1)
+        }
+
+        function iniciarCalculo(simbolo){
+            operacao = simbolo;
+            alert(operacao)
+        }
+
+        function mostrarNoDisplay(valor) {
+            document.querySelector("#display").innerHTML  = valor;
+        }
+    </script>
 
 </body>
 </html>
